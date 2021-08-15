@@ -1,9 +1,7 @@
 package com.example.service;
 
-import java.util.Date;
-
 public interface PaymentService {
 
-	void pay(String hotel, Date from_date, Date to_date, String room_type);
+	void pay(String room_number, String room_type, boolean is_available);
 	
 }

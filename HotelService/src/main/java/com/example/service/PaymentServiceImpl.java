@@ -1,7 +1,5 @@
 package com.example.service;
 
-import java.util.Date;
-
 import com.example.entity.Hotel;
 import com.example.repository.BookRepository;
 import com.example.repository.HotelRepository;
@@ -18,9 +16,10 @@ public class PaymentServiceImpl implements PaymentService{
 	}
 
 	@Override
-	public void pay(String hotel_id, Date from_date, Date to_date, String room_type) {
+	public void pay(String hotel_name, String room_type, boolean is_available) {
 
-		Hotel hotel = hotelRepository.findById("like '"+hotel_id+"_'").get();
+		//TODO
+		Hotel hotel = hotelRepository.findById("like '"+hotel_name+"_'").get();
 		System.out.println(hotel.toString());
 		
 	}
