@@ -1,7 +1,12 @@
 package com.example.service;
 
+import java.util.List;
+
+import com.example.entity.Hotel;
+
 public interface PaymentService {
 
-	void pay(String room_number, String room_type, boolean is_available);
+	List<Hotel> check(String hotel_name, String room_type);
+	String pay(String hotel_name, String room_type);
 	
 }

@@ -2,16 +2,15 @@ package com.example.controller;
 
 public class PaymentRequest {
 
-	String room_number;
+	String hotel_name;
 	String room_type;
-	boolean is_available;
 	
-	public String getRoom_number() {
-		return room_number;
+	public String getHotel_name() {
+		return hotel_name;
 	}
 
-	public void setRoom_number(String room_number) {
-		this.room_number = room_number;
+	public void setHotel_name(String hotel_name) {
+		this.hotel_name = hotel_name;
 	}
 
 	public String getRoom_type() {
@@ -22,18 +21,9 @@ public class PaymentRequest {
 		this.room_type = room_type;
 	}
 
-	public boolean isIs_available() {
-		return is_available;
-	}
-
-	public void setIs_available(boolean is_available) {
-		this.is_available = is_available;
-	}
-
 	@Override
 	public String toString() {
-		return "PaymentRequest [room_number=" + room_number + ", room_type=" + room_type + ", is_available="
-				+ is_available + "]";
+		return "PaymentRequest [hotel_name=" + hotel_name + ", room_type=" + room_type + "]";
 	}
 	
 }
