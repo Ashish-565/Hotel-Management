@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Hotel;
-import com.example.service.PaymentService;
+import com.example.repository.HotelRepository;
 
 @CrossOrigin(origins = {"*"})
 @RestController()
@@ -18,11 +18,17 @@ import com.example.service.PaymentService;
 public class AvlRoomsController {
 
 	@Autowired
-	PaymentService paymentService;
+	HotelRepository hotelRepository;
+	
+	@GetMapping(value="/{hotel_name}", produces = {"application/json"})
+	public List<Hotel> getAllAvlRooms(@PathVariable(value="hotel_name") String hotel_name) {
+		List<Hotel> hotels = hotelRepository.findAllByName(hotel_name+"_");
+		return hotels;
+	}
 	
 	@GetMapping(value="/{hotel_name}/{room_type}", produces = {"application/json"})
-	public List<Hotel> getAvlRooms(@PathVariable(value="hotel_name") String hotel_name, @PathVariable(value="room_type") String room_type) {
-		List<Hotel> hotels = paymentService.check(hotel_name, room_type);
+	public List<Hotel> getAvlRoomTypes(@PathVariable(value="hotel_name") String hotel_name, @PathVariable(value="room_type") String room_type) {
+		List<Hotel> hotels = hotelRepository.findAllByNameAndType(hotel_name+"_", room_type);
 		return hotels;
 	}
 	

@@ -23,23 +23,16 @@ public class PaymentServiceImpl implements PaymentService{
 
 	@Transactional
 	@Override
-	public String pay(String hotel_name, String room_type) {
+	public String pay(String room_number, String room_type) {
 
-		List<Hotel> hotels = hotelRepository.findAllByNameAndType(hotel_name+"_", room_type);
+		List<Hotel> hotels = hotelRepository.findAllByNameAndType(room_number+"_", room_type);
 		if(hotels.size()>0) {
+			
 			return "Hotel booked";
 		}else {
 			return "No rooms are available"; 
 		}
 
 	}
-
-	@Transactional
-	@Override
-	public List<Hotel> check(String hotel_name, String room_type) {
-		return hotelRepository.findAllByNameAndType(hotel_name+"_", room_type);
-	}
-	
-	
 
 }

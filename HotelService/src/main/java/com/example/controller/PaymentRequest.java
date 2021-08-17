@@ -2,15 +2,15 @@ package com.example.controller;
 
 public class PaymentRequest {
 
-	String hotel_name;
+	String room_number;
 	String room_type;
 	
-	public String getHotel_name() {
-		return hotel_name;
+	public String getRoom_number() {
+		return room_number;
 	}
 
-	public void setHotel_name(String hotel_name) {
-		this.hotel_name = hotel_name;
+	public void setRoom_number(String room_number) {
+		this.room_number = room_number;
 	}
 
 	public String getRoom_type() {
@@ -23,7 +23,7 @@ public class PaymentRequest {
 
 	@Override
 	public String toString() {
-		return "PaymentRequest [hotel_name=" + hotel_name + ", room_type=" + room_type + "]";
+		return "PaymentRequest [room_number=" + room_number + ", room_type=" + room_type + "]";
 	}
 	
 }
