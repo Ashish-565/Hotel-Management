@@ -20,7 +20,7 @@ public class PaymentController {
 	@PostMapping
 	public PaymentResponse pay(@RequestBody PaymentRequest paymentRequest) {
 		
-		String message  = paymentService.pay(paymentRequest.getRoom_number(), paymentRequest.getRoom_type());
+		String message  = paymentService.pay(paymentRequest.getRoom_number(), paymentRequest.getFrom_date(), paymentRequest.getTo_date());
 		PaymentResponse paymentResponse = new PaymentResponse();
 		paymentResponse.setMessage(message);
 		return paymentResponse;

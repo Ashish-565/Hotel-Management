@@ -1,9 +1,12 @@
 package com.example.controller;
 
+import java.util.Date;
+
 public class PaymentRequest {
 
 	String room_number;
-	String room_type;
+	Date from_date;
+	Date to_date;
 	
 	public String getRoom_number() {
 		return room_number;
@@ -13,17 +16,25 @@ public class PaymentRequest {
 		this.room_number = room_number;
 	}
 
-	public String getRoom_type() {
-		return room_type;
+	public Date getFrom_date() {
+		return from_date;
 	}
 
-	public void setRoom_type(String room_type) {
-		this.room_type = room_type;
+	public void setFrom_date(Date from_date) {
+		this.from_date = from_date;
+	}
+
+	public Date getTo_date() {
+		return to_date;
+	}
+
+	public void setTo_date(Date to_date) {
+		this.to_date = to_date;
 	}
 
 	@Override
 	public String toString() {
-		return "PaymentRequest [room_number=" + room_number + ", room_type=" + room_type + "]";
+		return "PaymentRequest [room_number=" + room_number + ", from_date=" + from_date + ", to_date=" + to_date + "]";
 	}
-	
+
 }

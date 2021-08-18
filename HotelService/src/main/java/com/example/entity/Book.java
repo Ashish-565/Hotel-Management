@@ -24,4 +24,11 @@ public class Book {
 	Date from_date;
 	Date to_date;
 	
+	public Book(String room_number, Date from_date, Date to_date) {
+		super();
+		this.room_number = room_number;
+		this.from_date = from_date;
+		this.to_date = to_date;
+	}
+	
 }

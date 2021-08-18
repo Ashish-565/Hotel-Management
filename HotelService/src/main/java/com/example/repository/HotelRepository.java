@@ -18,4 +18,7 @@ public interface HotelRepository extends JpaRepository<Hotel, String>{
 	@Query(value = "Select * from Hotel h where h.room_number like :hotel_name and h.is_available=true", nativeQuery = true)
 	List<Hotel> findAllByName(@Param("hotel_name") String hotel_name);
 	
+	@Query(value = "select * from Hotel h where h.room_number = :room_number", nativeQuery = true)
+	Hotel findRoomById(@Param("room_number") String room_number);
+	
 }
