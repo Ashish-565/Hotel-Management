@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+
+  <body>
+    <ul class="list-group list-group-flush" *ngFor="let hotel of rooms;let idx=index">
+      <li class="list-group-item">{{hotel.room_number}}</li>
+      <li class="list-group-item">{{hotel.room_type}}</li>
+      <li class="list-group-item">{{hotel.price}}</li>
+    </ul>
+
+  </body>
+</div>
