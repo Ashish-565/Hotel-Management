@@ -8,6 +8,14 @@ export class HotelService {
 
   constructor(private httpClient:HttpClient) { }
 
+  rooms:any[]=[];
+  passRoomsObject(passRooms: any[]){
+    this.rooms=passRooms;
+  }
+  retriveRoomsObject(){
+    return this.rooms;
+  }
+
   avlRooms(hotel_name:String, room_type:String){
    return this.httpClient.get("http://localhost:8080/avl/rooms/"+hotel_name+"/"+room_type)
   }

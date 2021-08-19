@@ -1,21 +1,22 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotelService } from '../app.service';
-import { RoomDetailsComponent } from '../room-details/room-details.component';
 
 @Component({
   selector: 'app-hotel',
   templateUrl: './hotel.component.html',
-  styleUrls: ['./hotel.component.css']
+  styleUrls: ['./hotel.component.css'],
+  providers: [HotelService]
 })
+
 export class HotelComponent implements OnInit {
 
   
 
-  constructor(private router:Router, private hotelService:HotelService, private roomDetailsComponent:RoomDetailsComponent) { }
+  constructor(private router:Router, private hotelService:HotelService) { }
 
-  public rooms!:Array<any>;
+  rooms?: Array<any>;
   hotel!: String;
   type!: String;
 
@@ -27,8 +28,11 @@ export class HotelComponent implements OnInit {
       }
     })
     // console.log(this.rooms);
-    this.roomDetailsComponent.avlRoomDetails(this.rooms);
     this.router.navigate(['/room']);
+  }
+
+  passRoomsToService(){
+    // this.hotelService.passRoomsObject(this.rooms);
   }
   
   
