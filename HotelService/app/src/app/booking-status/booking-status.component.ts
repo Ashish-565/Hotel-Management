@@ -18,13 +18,18 @@ export class BookingStatusComponent implements OnInit {
     this.room=roomDetailsComponent.room;
   }
 
-  ngOnInit(): void {
+  book(){
     this.hotelService.bookRoom(this.room, this.from_date, this.to_date).subscribe({
       next:(response:any)=>{
         this.message=response;
         console.log(response);
       }
     })
+  }
+
+  ngOnInit(): void {
+    
+
   }
 
 }

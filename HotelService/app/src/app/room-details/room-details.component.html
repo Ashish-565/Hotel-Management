@@ -1,11 +1,31 @@
-<div class="card" style="width: 18rem;">
+<html>
 
-  <body>
-    <ul class="list-group list-group-flush" *ngFor="let hotel of rooms;let idx=index">
-      <li class="list-group-item">{{hotel.room_number}}</li>
-      <li class="list-group-item">{{hotel.room_type}}</li>
-      <li class="list-group-item">{{hotel.price}}</li>
-    </ul>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="room-details.component.css">
 
-  </body>
-</div>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      <div class="card header">Room Details</div>
+      <div class="card body">
+        <select [(ngModel)]="room" name="room">
+          <ul class="list-group list-group-flush" *ngFor="let room of rooms;let idx=index">
+            <option>
+              <li class="list-group-item" value="roomNumber">{{room.room_number}}</li>
+              <li class="list-group-item">{{room.room_type}}</li>
+              <li class="list-group-item">{{room.price}}</li>
+            </option>
+          </ul>
+        </select>
+      </div>
+      <div class="card footer">
+        <button (click)="bookRoom()" class="btn btn-info">Next</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

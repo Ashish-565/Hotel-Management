@@ -20,13 +20,13 @@ public class AvlRoomsController {
 	@Autowired
 	HotelRepository hotelRepository;
 	
-	@GetMapping(value="/{hotel_name}", produces = {"application/json"})
+	@GetMapping(value="/{hotel_name}")
 	public List<Hotel> getAllAvlRooms(@PathVariable(value="hotel_name") String hotel_name) {
 		List<Hotel> hotels = hotelRepository.findAllByName(hotel_name+"_");
 		return hotels;
 	}
 	
-	@GetMapping(value="/{hotel_name}/{room_type}", produces = {"application/json"})
+	@GetMapping(value="/{hotel_name}/{room_type}")
 	public List<Hotel> getAvlRoomTypes(@PathVariable(value="hotel_name") String hotel_name, @PathVariable(value="room_type") String room_type) {
 		List<Hotel> hotels = hotelRepository.findAllByNameAndType(hotel_name+"_", room_type);
 		return hotels;

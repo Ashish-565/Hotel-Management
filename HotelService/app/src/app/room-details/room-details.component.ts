@@ -13,16 +13,22 @@ export class RoomDetailsComponent implements OnInit {
   rooms!:Array<any>;
   room!: String;
 
-  constructor(private hotelComponent:HotelComponent, private router:Router) { 
-    this.rooms=hotelComponent.rooms;
+  constructor(private router:Router) { 
+  
   }
-
+  
   bookRoom(){
     this.router.navigateByUrl("/booking");
   }
 
+  avlRoomDetails(rooms:any){
+    this.rooms=rooms;
+  }
 
   ngOnInit(): void {
+    // this.rooms=this.hotelComponent.rooms;
+    
+    // console.log(this.hotelComponent.rooms)
   }
 
 }

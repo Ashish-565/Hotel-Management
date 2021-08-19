@@ -42,13 +42,13 @@
 							<label for="">Check-in *</label>
 							<!-- <span class="input-group date' id='datetimepicker2"></span>
 							<input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd M yyyy" id="dp1"> -->
-                            <input type="date" [(ngModel)]="from_date" value="fromDate">
+                            <input type="date" [(ngModel)]="from_date" value="fromDate" name="fromDate">
                         </div>
 						<div class="form-wrapper">
 							<label for="">Check-out *</label>
 							<!-- <span class="lnr lnr-calendar-full"></span> -->
 							<!-- <input type="text" class="form-control datepicker-here" data-language='en'  data-date-format="dd M yyyy" id="dp2"> -->
-							<input type="date" [(ngModel)]="to_date" value="toDate">
+							<input type="date" [(ngModel)]="to_date" value="toDate" name="toDate">
 						</div>
 					</div>
 					<div class="form-row last">
@@ -83,7 +83,7 @@
 							<span class="checkmark"></span>
 						</label>
 					</div>
-					<button data-text="Book Room">
+					<button data-text="Book Room" (click)="book()">
 						<span>Book Room</span>
 					</button>
 				</form>

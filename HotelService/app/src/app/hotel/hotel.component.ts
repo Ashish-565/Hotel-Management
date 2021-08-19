@@ -1,15 +1,8 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotelService } from '../app.service';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-
-@NgModule({
-  imports: [
-    FormsModule,
-    BrowserModule
-  ]
-})
+import { RoomDetailsComponent } from '../room-details/room-details.component';
 
 @Component({
   selector: 'app-hotel',
@@ -18,22 +11,26 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class HotelComponent implements OnInit {
 
-  rooms:Array<any>=[]
+  
 
-  constructor(private router:Router, private hotelService:HotelService) { }
+  constructor(private router:Router, private hotelService:HotelService, private roomDetailsComponent:RoomDetailsComponent) { }
 
+  public rooms!:Array<any>;
   hotel!: String;
   type!: String;
 
-  roomDetails(event:any){
-    event.preventDefault();
+  roomDetails(){
     this.hotelService.avlRooms(this.hotel, this.type).subscribe({
       next:(response:any)=>{
         this.rooms=response;
+        // console.log(this.rooms);
       }
     })
-    this.router.navigateByUrl("/room");
+    // console.log(this.rooms);
+    this.roomDetailsComponent.avlRoomDetails(this.rooms);
+    this.router.navigate(['/room']);
   }
+  
   
   ngOnInit(): void {
   }

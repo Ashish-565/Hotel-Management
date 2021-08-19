@@ -18,20 +18,20 @@
 
 
       <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
-        <form action="">
+        <form class="form-group">
           <label for="HotelType"> Choose Hotel Name: &#160;&#160; </label>
-          <select [ngModel]="hotel">
+          <select [(ngModel)]="hotel" name="hotel">
             <option value="A">Hotel A</option>
             <option value="B">Hotel B</option>
             <option value="C">Hotel C</option>
           </select><br><br>
           <label for="roomType"> Choose Hotel Type:&nbsp; &nbsp; </label>
-          <select [ngModel]="type">
+          <select [(ngModel)]="type" name="type">
             <option value="Delux">Delux</option>
             <option value="Economy">Economy</option>
           </select>
           <br><br>
-          <button (click)="roomDetails($event)" class="btn btn-info">proceed</button>
+          <button (click)="roomDetails()" class="btn btn-info">proceed</button>
         </form>
       </div>
     </header>
