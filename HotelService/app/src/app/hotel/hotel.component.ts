@@ -1,4 +1,3 @@
-
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotelService } from '../app.service';
@@ -24,11 +23,11 @@ export class HotelComponent implements OnInit {
     this.hotelService.avlRooms(this.hotel, this.type).subscribe({
       next:(response:any)=>{
         this.rooms=response;
-        // console.log(this.rooms);
+         console.log(this.rooms);
       }
     })
     // console.log(this.rooms);
-    this.router.navigate(['/room']);
+    this.router.navigate(['/room',{hotel : this.hotel,type :this.type}]);
   }
 
   passRoomsToService(){

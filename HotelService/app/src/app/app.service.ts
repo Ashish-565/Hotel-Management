@@ -9,10 +9,13 @@ export class HotelService {
   constructor(private httpClient:HttpClient) { }
 
   rooms:any[]=[];
-  passRoomsObject(passRooms: any[]){
+
+  hotel !: String;
+  type !: String;
+  passRooms(passRooms: any[]){
     this.rooms=passRooms;
   }
-  retriveRoomsObject(){
+  retriveRooms(){
     return this.rooms;
   }
 
@@ -25,5 +28,3 @@ export class HotelService {
   }
 
 }
-
-

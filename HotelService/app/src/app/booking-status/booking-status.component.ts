@@ -15,7 +15,7 @@ export class BookingStatusComponent implements OnInit {
   room!: String;
 
   constructor(private hotelService:HotelService, private roomDetailsComponent:RoomDetailsComponent) { 
-    this.room=roomDetailsComponent.room;
+    this.room=roomDetailsComponent.room_num;
   }
 
   book(){

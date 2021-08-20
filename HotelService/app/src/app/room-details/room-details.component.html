@@ -1,28 +1,33 @@
 <html>
 
 <head>
-  <title></title>
+  <title>Room Details</title>
   <link rel="stylesheet" href="room-details.component.css">
 
 </head>
 
 <body>
-  <div class="container">
-    <div class="card" style="width: 18rem;">
-      <div class="card header">Room Details</div>
-      <div class="card body">
-        <select [(ngModel)]="room" name="room">
-          <ul class="list-group list-group-flush" *ngFor="let room of rooms;let idx=index">
-            <option>
-              <li class="list-group-item" value="roomNumber">{{room.room_number}}</li>
-              <li class="list-group-item">{{room.room_type}}</li>
-              <li class="list-group-item">{{room.price}}</li>
-            </option>
-          </ul>
-        </select>
-      </div>
-      <div class="card footer">
-        <button (click)="bookRoom()" class="btn btn-info">Next</button>
+  <div class="container" [(ngModel)]="room_num" name="room_num">
+    <div class="one">
+      <div class="card" style="width: 18rem;" *ngFor="let room of rooms;let idx=index;">
+        <div class="card header"></div>
+        <div class="card body">
+          <div>
+            <ul class="list-group list-group-flush">
+              <!-- <option> -->
+              
+              <p value="room_num">Room Number: {{room.room_number}}</p>
+              <p>Room Type: {{room.room_type}}</p>
+              <p>Price: {{room.price}}</p>
+              <!-- </option> -->
+
+              <button (click)="bookRoom()" class="btn btn-info">Next</button>
+            </ul>
+          </div>
+        </div>
+        <div class="card footer">
+
+        </div>
       </div>
     </div>
   </div>
