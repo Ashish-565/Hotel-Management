@@ -15,10 +15,10 @@ import {HttpClient} from "@angular/common/http";
 export class RoomDetailsComponent implements OnInit {
 
   rooms:any;
-  room_num :any;
+  room_num!:String;
  
-  hotel: String | null= "unknown"  ;
- type!: String |null  ;
+  hotel!: String | null;
+  type!: String | null;
  
 
 
@@ -27,8 +27,8 @@ export class RoomDetailsComponent implements OnInit {
   }
   
   bookRoom(){
-    console.log(this.room_num);
-    this.router.navigateByUrl("/booking");
+    // console.log(this.room_num);
+    this.router.navigate(['/booking',{room : this.room_num}]);
 
   }
 
@@ -43,7 +43,7 @@ export class RoomDetailsComponent implements OnInit {
       this.httpClient.get("http://localhost:8080/avl/rooms/"+this.hotel+"/"+this.type).subscribe((Response :any)=>{
       
       console.log(Response);
-       this.rooms =Response;
+      this.rooms =Response;
       
      });
 

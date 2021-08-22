@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthServiceService } from '../auth-service.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     event.preventDefault()
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
-      this.authService.doAuth(credentials)
+      this.userService.doAuth(credentials)
         .subscribe({
           next: (response: any) => {
             this.loginErrorMessage=null;
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private authService: AuthServiceService,
+    private userService: UserService,
     private router:Router) { }
 
   ngOnInit(): void {

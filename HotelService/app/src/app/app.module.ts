@@ -12,10 +12,11 @@ import { ConformComponent } from './conform/conform.component';
 import { LoginComponent } from './login/login.component';
 
 const routes:Routes=[
-  {path:'',component:LoginComponent},
-  {path:'hotel',component:HotelComponent},
+  {path:'login',component:LoginComponent},
+  {path:'',component:HotelComponent},
   {path:'room',component:RoomDetailsComponent},
-  {path:'booking',component:BookingStatusComponent}
+  {path:'booking',component:BookingStatusComponent},
+  {path:'conform',component:ConformComponent}
 ]
 
 @NgModule({
