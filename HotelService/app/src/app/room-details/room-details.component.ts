@@ -40,11 +40,10 @@ export class RoomDetailsComponent implements OnInit {
       this.hotel = params.get("hotel")
       this.type = params.get("type")
 
-   this.httpClient.get("http://localhost:8080/avl/rooms/"+this.hotel+"/"+this.type).subscribe( (Response :any)=>{
+      this.httpClient.get("http://localhost:8080/avl/rooms/"+this.hotel+"/"+this.type).subscribe((Response :any)=>{
       
-    console.log(Response);
+      console.log(Response);
        this.rooms =Response;
-       console.log(this.rooms);
       
      });
 

@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { BookingStatusComponent } from './booking-status/booking-status.component';
+import { ConformComponent } from './conform/conform.component';
+import { LoginComponent } from './login/login.component';
 
 const routes:Routes=[
-  {path:'',component:HotelComponent},
+  {path:'',component:LoginComponent},
+  {path:'hotel',component:HotelComponent},
   {path:'room',component:RoomDetailsComponent},
   {path:'booking',component:BookingStatusComponent}
 ]
@@ -20,13 +23,16 @@ const routes:Routes=[
     AppComponent,
     HotelComponent,
     RoomDetailsComponent,
-    BookingStatusComponent
+    BookingStatusComponent,
+    ConformComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [
     HotelComponent,
