@@ -47,7 +47,7 @@ public class PaymentServiceImpl implements PaymentService {
 		Customer customer = new Customer(name, phone_number, no_of_days, book_date, amount);
 		customerRepository.save(customer);
 		
-		Book book = new Book(room_number, from_date, to_date);
+		Book book = new Book(room_number, from_date, to_date, customer.getCustomer_id());
 		bookRepository.save(book);
 		
 		return "Hotel room booked";
