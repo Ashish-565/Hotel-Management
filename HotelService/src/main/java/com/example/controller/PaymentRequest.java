@@ -3,6 +3,41 @@ package com.example.controller;
 import java.util.Date;
 
 public class PaymentRequest {
+	String name;
+	String phone_number;
+	int no_of_days;
+	float amount;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhone_number() {
+		return phone_number;
+	}
+
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
+	}
+
+	public int getNo_of_days() {
+		return no_of_days;
+	}
+
+	public void setNo_of_days(int no_of_days) {
+		this.no_of_days = no_of_days;
+	}
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
 
 	String room_number;
 	Date from_date;
@@ -34,7 +69,10 @@ public class PaymentRequest {
 
 	@Override
 	public String toString() {
-		return "PaymentRequest [room_number=" + room_number + ", from_date=" + from_date + ", to_date=" + to_date + "]";
+		return "PaymentRequest [name=" + name + ", phone_number=" + phone_number + ", no_of_days=" + no_of_days
+				+ ", amount=" + amount + ", room_number=" + room_number + ", from_date=" + from_date + ", to_date="
+				+ to_date + "]";
 	}
 
+	
 }

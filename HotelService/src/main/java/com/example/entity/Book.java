@@ -2,10 +2,13 @@ package com.example.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +26,9 @@ public class Book {
 	String room_number;
 	Date from_date;
 	Date to_date;
+	@OneToOne(cascade = CascadeType.ALL, targetEntity = Customer.class)
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+	int customer_id;
 	
 	public Book(String room_number, Date from_date, Date to_date) {
 		super();

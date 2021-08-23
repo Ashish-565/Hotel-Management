@@ -16,8 +16,20 @@ public class Hotel {
 	String room_type;
 	double price;
 	boolean is_available;
+	String url;
 	
 	
+	@Override
+	public String toString() {
+		return "Hotel [room_number=" + room_number + ", room_type=" + room_type + ", price=" + price + ", is_available="
+				+ is_available + ", url=" + url + "]";
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	public String getRoom_number() {
 		return room_number;
 	}
